@@ -7,10 +7,10 @@ export default {
   dialect: "singlestore",
   tablesFilter: ["file-manager_*"],
   dbCredentials: {
-    host: env.SINGLESTORE_HOST,
-    port: parseInt(env.SINGLESTORE_PORT),
     user: env.SINGLESTORE_USER,
     password: env.SINGLESTORE_PASS,
+    host: env.SINGLESTORE_HOST,
+    port: parseInt(env.SINGLESTORE_PORT),
     database: env.SINGLESTORE_DB_NAME,
     ssl: {},
   }
