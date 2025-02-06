@@ -17,5 +17,12 @@ export default async function FolderContents(props: {
     QUERIES.getAllParentsForFolder(parsedFolderID),
   ]);
 
-  return <DriveContents files={files} folders={folders} parents={parents} />;
+  return (
+    <DriveContents
+      files={files}
+      folders={folders}
+      parents={parents}
+      currentFolderId={parsedFolderID}
+    />
+  );
 }
