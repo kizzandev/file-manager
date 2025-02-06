@@ -17,6 +17,8 @@ export const env = createEnv({
     SINGLESTORE_HOST: z.string(),
     SINGLESTORE_PORT: z.string(),
     SINGLESTORE_DB_NAME: z.string(),
+
+    CLERK_MY_USER_ID: z.string(),
   },
 
   /**
@@ -41,6 +43,7 @@ export const env = createEnv({
     SINGLESTORE_PORT: process.env.SINGLESTORE_PORT,
     SINGLESTORE_DB_NAME: process.env.SINGLESTORE_DB_NAME,
     // NEXT_PUBLIC_CLIENTVAR: process.env.NEXT_PUBLIC_CLIENTVAR,
+    CLERK_MY_USER_ID: process.env.CLERK_MY_USER_ID,
   },
   /**
    * Run `build` or `dev` with `SKIP_ENV_VALIDATION` to skip env validation. This is especially
