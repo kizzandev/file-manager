@@ -16,7 +16,7 @@ import {
  * @see https://orm.drizzle.team/docs/goodies#multi-project-schema
  */
 export const createTable = singlestoreTableCreator(
-  (name) => `file-manager_${name}`,
+  (name) => `file_manager_${name}`,
 );
 
 export const files_table = createTable(
