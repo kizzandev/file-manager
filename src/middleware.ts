@@ -1,6 +1,18 @@
-import { clerkMiddleware } from "@clerk/nextjs/server";
+import { clerkMiddleware, createRouteMatcher } from "@clerk/nextjs/server";
+import { NextResponse } from "next/server";
+import type { NextRequest } from "next/server";
 
-export default clerkMiddleware();
+function someMiddleware(req: NextRequest) {
+  return NextResponse.redirect(new URL("/", req.url));
+}
+
+const isProtectedRoute = createRouteMatcher(["/f(.*)"]);
+const isPublicRoute = createRouteMatcher(["/"]);
+
+export default clerkMiddleware(async (auth, req) => {
+  if (isProtectedRoute(req)) await auth.protect();
+  else if (!isPublicRoute(req)) return someMiddleware(req);
+});
 
 export const config = {
   matcher: [
