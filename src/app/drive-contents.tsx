@@ -5,15 +5,15 @@ import { FileRow, FolderRow } from "./file-row";
 import type { DB_FileType, DB_FolderType } from "@/server/db/schema";
 import Link from "next/link";
 import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
+import { Button } from "@/components/ui/button";
+import { useRouter } from "next/navigation";
 
 export default function DriveContents(props: {
   files: DB_FileType[];
   folders: DB_FolderType[];
   parents: DB_FolderType[];
 }) {
-  const handleUpload = () => {
-    alert("Upload functionality would be implemented here");
-  };
+  const navigate = useRouter();
 
   return (
     <div className="min-h-screen bg-gray-900 p-8 text-gray-100">
@@ -61,6 +61,14 @@ export default function DriveContents(props: {
             ))}
           </ul>
         </div>
+        <Button
+          onClick={() => {
+            alert("Upload functionality would be implemented here");
+            navigate.refresh();
+          }}
+        >
+          <Upload /> Upload
+        </Button>
       </div>
     </div>
   );
