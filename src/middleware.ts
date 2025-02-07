@@ -6,8 +6,8 @@ function someMiddleware(req: NextRequest) {
   return NextResponse.redirect(new URL("/", req.url));
 }
 
-const isProtectedRoute = createRouteMatcher(["/f(.*)"]);
-const isPublicRoute = createRouteMatcher(["/"]);
+const isProtectedRoute = createRouteMatcher(["/f(.*)", "/drive"]);
+const isPublicRoute = createRouteMatcher(["/", "/sign-in", "/ingest(.*)"]);
 
 export default clerkMiddleware(async (auth, req) => {
   if (isProtectedRoute(req)) await auth.protect();
