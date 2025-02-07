@@ -8,10 +8,12 @@ function someMiddleware(req: NextRequest) {
 
 const isProtectedRoute = createRouteMatcher(["/f(.*)", "/drive"]);
 const isPublicRoute = createRouteMatcher(["/", "/sign-in", "/ingest(.*)"]);
+const isSeedRoute = createRouteMatcher(["/sandbox"]);
 
 export default clerkMiddleware(async (auth, req) => {
-  if (isProtectedRoute(req)) await auth.protect();
-  else if (!isPublicRoute(req)) return someMiddleware(req);
+  // if (isProtectedRoute(req)) await auth.protect();
+  // else if (!isPublicRoute(req)) return someMiddleware(req);
+  if (isSeedRoute(req)) return someMiddleware(req);
 });
 
 export const config = {
