@@ -7,3 +7,5 @@
 - [x] Add auth
 - [ ] Add file uploading
 - [ ] Add analytics
+- [ ] Add file deletion
+- [ ] Home page and onboarding
