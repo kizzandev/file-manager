@@ -1,4 +1,4 @@
-import DriveContents from "@/app/drive-contents";
+import DriveContents from "./drive-contents";
 import { QUERIES } from "@/server/db/queries";
 
 export default async function FolderContents(props: {
