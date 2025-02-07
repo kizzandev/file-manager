@@ -7,6 +7,7 @@ import Link from "next/link";
 import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
+import { usePostHog } from "posthog-js/react";
 
 export default function DriveContents(props: {
   files: DB_FileType[];
@@ -15,6 +16,8 @@ export default function DriveContents(props: {
   currentFolderId: number;
 }) {
   const navigate = useRouter();
+
+  const posthog = usePostHog();
 
   return (
     <div className="min-h-screen bg-gray-900 p-8 text-gray-100">
@@ -64,6 +67,9 @@ export default function DriveContents(props: {
         </div>
         <Button
           onClick={() => {
+            posthog.capture("file_uploading", {
+              fileCount: 0,
+            });
             alert("Upload functionality would be implemented here");
             navigate.refresh();
           }}
