@@ -6,4 +6,36 @@
 - [x] Move folder open state to URL
 - [x] Add auth
 - [x] Add analytics
-- [ ] Home page and onboarding
+- [x] Home page and onboarding
+- [x] Check if user is owner before showing the folder page
+- [ ] Production Users
+- [ ] Folder deletion
+  - Optimistic update OR grey out the row
+  - Collect everything that needs to be deleted
+  - Keep track of everything
+  - Delete all in one pass
+- [ ] Folder creation
+  - Server action
+    - Params: name, parentId
+    - Create folder with: name, parentId, ownerId (userId)
+- [ ] Make a "file view" page
+- [ ] Redisign the UI/UX
+- [ ] File
+  - [ ] Uploading
+  - [ ] Deletion
+  - [ ] Renaming
+  - [ ] Moving
+  - [ ] Sharing
+    - By user (invite)
+- [ ] Folder
+  - [ ] Renaming
+  - [ ] Moving
+  - [ ] Sharing
+    - By user (invite)
+- [ ] New pages
+  - [ ] About
+  - [ ] Settings
+  - [ ] Pricing
+  - [ ] Privacy policy
+  - [ ] Terms of service
+- [ ] Payments
