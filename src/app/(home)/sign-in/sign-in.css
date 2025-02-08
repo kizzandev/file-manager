@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  button[data-type="sign-in"] {
+    @apply rounded-md border border-input bg-primary w-full py-4 font-semibold transition-colors hover:border-sky-400 hover:text-sky-400;
+  }
+}

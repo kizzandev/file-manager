@@ -6,7 +6,7 @@ function redirectToHome(req: NextRequest) {
   return NextResponse.redirect(new URL("/", req.url));
 }
 
-const isProtectedRoute = createRouteMatcher(["/f(.*)", "/drive"]);
+const isProtectedRoute = createRouteMatcher(["/f/(.*)", "/drive"]);
 const isPublicRoute = createRouteMatcher(["/", "/sign-in", "/ingest(.*)"]);
 
 export default clerkMiddleware(async (auth, req) => {
