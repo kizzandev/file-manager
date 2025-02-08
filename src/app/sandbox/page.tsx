@@ -1,13 +1,14 @@
-import { auth } from "@clerk/nextjs/server";
+/*import { auth } from "@clerk/nextjs/server";
 import { db } from "@/server/db";
 import { eq } from "drizzle-orm";
 import { mockFolders } from "@/lib/mock-data";
 import { folders_table } from "@/server/db/schema";
 import { env } from "@/env";
-import { redirect } from "next/navigation";
+import { redirect } from "next/navigation";/***/
 
 export default async function Sandbox() {
-  const user = await auth();
+  return <>{"Sandbox"}</>;
+  /*const user = await auth();
   if (!user.userId || user.userId !== env.CLERK_MY_USER_ID) redirect("/");
 
   const folders = await db
@@ -47,5 +48,5 @@ export default async function Sandbox() {
         <button type="submit">Seed</button>
       </form>
     </div>
-  );
+  );/***/
 }
