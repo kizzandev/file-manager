@@ -1,14 +1,15 @@
 # File Manager
 
-## TODO
+## TODO On My Own
 
-- [x] Set up database and data model
-- [x] Move folder open state to URL
-- [x] Add auth
-- [x] Add analytics
-- [x] Home page and onboarding
 - [x] Check if user is owner before showing the folder page
-- [ ] Production Users
+- [ ] Redesign the UI/UX
+- [ ] Update to Tailwind 4
+- [ ] Improve project structure and naming
+- [ ] Add i18n
+- [ ] Build on the middleware
+- [ ] Delete the database and remake it with a more general name
+  - So there's a reason for the "file_manager" prefix
 - [ ] Folder deletion
   - Optimistic update OR grey out the row
   - Collect everything that needs to be deleted
@@ -19,7 +20,6 @@
     - Params: name, parentId
     - Create folder with: name, parentId, ownerId (userId)
 - [ ] Make a "file view" page
-- [ ] Redisign the UI/UX
 - [ ] File
   - [ ] Uploading
   - [ ] Deletion
@@ -39,3 +39,5 @@
   - [ ] Privacy policy
   - [ ] Terms of service
 - [ ] Payments
+- [ ] Capture more actions for the analytics
+- [ ] Production Users
