@@ -3,6 +3,8 @@ import { redirect } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { MUTATIONS, QUERIES } from "@/server/db/queries";
 
+import "../sign-in/sign-in.css";
+
 export default async function DrivePage() {
   const session = await auth();
 
@@ -28,7 +30,7 @@ export default async function DrivePage() {
           return redirect(`/f/${rootFolderId}`);
         }}
       >
-        <Button>Create new Drive</Button>
+        <Button data-type="sign-in">Create new Drive</Button>
       </form>
     );
   }
