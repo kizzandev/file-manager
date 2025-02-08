@@ -31,7 +31,7 @@ export const QUERIES = {
       .select()
       .from(folders_table)
       .where(eq(folders_table.parent, folderId))
-      .orderBy(folders_table.id);
+      .orderBy(folders_table.name);
   },
 
   getFiles: function (folderId: number) {
@@ -39,7 +39,7 @@ export const QUERIES = {
       .select()
       .from(files_table)
       .where(eq(files_table.parent, folderId))
-      .orderBy(files_table.id);
+      .orderBy(files_table.name);
   },
 
   getFolderById: async function (folderId: number) {
